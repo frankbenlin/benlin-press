@@ -1,145 +1,33 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Benlin Press — writing assistance prompts and skills for standardized printable documents."
-    />
-    <title>Benlin Press</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header class="site-header">
-      <div class="container nav">
-        <div class="brand" aria-label="Benlin Press home">
-          <span class="brand-mark">B</span>
-          <span>Benlin Press</span>
-        </div>
-        <nav class="main-nav" aria-label="Main navigation">
-          <a href="#mission">Mission</a>
-          <a href="#products">Products</a>
-          <a href="#templates">Templates</a>
-          <a href="#contact">Contact</a>
-        </nav>
-      </div>
-    </header>
-
-    <main>
-      <section class="hero">
-        <div class="container hero-layout">
-          <div class="hero-copy">
-            <p class="eyebrow">Writing assistance. Publishing tools. Print-ready output.</p>
-            <h1>Freedom of the press starts with everyday authors.</h1>
-            <p class="lede">
-              Benlin Press creates prompts, structured writing skills, and standardized document systems that help people publish clearly, consistently, and professionally.
-            </p>
-            <div class="hero-actions">
-              <a class="button primary" href="#products">Explore tools</a>
-              <a class="button secondary" href="#mission">Our mission</a>
-            </div>
-          </div>
-
-          <div class="hero-card" aria-label="Benlin Press overview">
-            <div class="card-header">
-              <span class="dot"></span>
-              <span>Press kit</span>
-            </div>
-            <h2>Anyone can become the press.</h2>
-            <p>
-              From essays to briefs, proposals to journals, we package reliable writing systems that turn ideas into publishable documents.
-            </p>
-            <ul>
-              <li>Prompt packs</li>
-              <li>Standardized templates</li>
-              <li>Printable document workflows</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section id="mission" class="section">
-        <div class="container two-column">
-          <div>
-            <p class="eyebrow">Mission</p>
-            <h2>Make publishing accessible to everyone.</h2>
-          </div>
-          <div>
-            <p>
-              The modern press should not be limited to institutions. We believe the future of publishing is distributed, participatory, and design-aware — built for people who need clear language, repeatable systems, and stable outputs.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section id="products" class="section muted">
-        <div class="container">
-          <p class="eyebrow">What we publish</p>
-          <div class="feature-grid">
-            <article class="feature-item">
-              <span class="feature-number">01</span>
-              <h3>Prompt packs</h3>
-              <p>Reusable writing systems for essays, proposals, briefs, and reports.</p>
-            </article>
-            <article class="feature-item">
-              <span class="feature-number">02</span>
-              <h3>Writing skills</h3>
-              <p>Structured capabilities that help produce clear, persuasive, and consistent text.</p>
-            </article>
-            <article class="feature-item">
-              <span class="feature-number">03</span>
-              <h3>Print-ready documents</h3>
-              <p>Standardized outputs designed for paper, PDF, and professional distribution.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="templates" class="section">
-        <div class="container">
-          <div class="section-heading">
-            <p class="eyebrow">Templates</p>
-            <h2>Designed for everyday publishing.</h2>
-          </div>
-
-          <div class="article-grid">
-            <article class="article-card">
-              <span class="meta">Essay</span>
-              <h3>Opinion and commentary</h3>
-              <p>Built for voice, argument, and clear editorial structure.</p>
-            </article>
-            <article class="article-card">
-              <span class="meta">Brief</span>
-              <h3>Project and proposal</h3>
-              <p>Clear sections, concise summaries, and action-oriented outputs.</p>
-            </article>
-            <article class="article-card">
-              <span class="meta">Journal</span>
-              <h3>Research and notes</h3>
-              <p>Organized knowledge capture with repeatable formatting and export.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer id="contact" class="site-footer">
-      <div class="container footer-layout">
-        <div>
-          <p class="eyebrow">Benlin Press</p>
-          <h2>Write clearly. Publish widely.</h2>
-        </div>
-        <a class="button primary" href="mailto:hello@benlinpress.com">hello@benlinpress.com</a>
-      </div>
-    </footer>
-
-    <script src="app.js"></script>
-  </body>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Benlin Press</title>
+<link href="https://fonts.googleapis.com/css2?family=Caladea:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root { --ink:#1a1a1a; --soft:#5f5f5f; --paper:#ffffff; --rule:#d0d0d0; color-scheme: light; }
+  @media (prefers-color-scheme: dark) { :root { --ink:#ececec; --soft:#a8a8a8; --paper:#161616; --rule:#3a3a3a; color-scheme: dark; } }
+  body { margin:0; background:var(--paper); color:var(--ink); font-family:Caladea, Cambria, Georgia, serif; line-height:1.5; }
+  main { max-width: 36rem; margin: 0 auto; padding: 4rem 1.5rem; }
+  h1 { font-size: 3rem; line-height:1; margin:0 0 .4rem; }
+  .lede { font-style: italic; color: var(--soft); font-size:1.15rem; margin:0 0 2.5rem; }
+  .fold { border-top:1px dashed var(--rule); margin: 2rem 0; }
+  a { color: inherit; }
+  ul { padding-left: 1.1rem; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Benlin Press</h1>
+  <p class="lede">Zines and booklets you print, fold, and bind at home.</p>
+  <p>Franky Lite is coming soon: a free AI prompt that checks your setup, then makes a local self-reliance zine from your zip code.</p>
+  <div class="fold"></div>
+  <p><strong>Test files</strong></p>
+  <ul>
+    <li><a href="test/sample-zine.html">Sample zine (2 print pages)</a></li>
+    <li><a href="broadside/v1/broadside.svg">Broadside v1</a></li>
+  </ul>
+</main>
+</body>
 </html>
