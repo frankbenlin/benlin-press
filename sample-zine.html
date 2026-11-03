@@ -114,7 +114,7 @@
 
 <!-- SIDE 2: the broadside, loaded from GitHub Pages -->
 <div class="sheet bs" id="bs">
-  <img src="https://frankbenlin.github.io/Benlin-press/broadside/v1/broadside.svg"
+  <img src="https://frankbenlin.github.io/Benlin-press/broadside.svg"
        alt="Benlin Press broadside: how to fold, what Franky does, Full Franky"
        onload="ok()" onerror="tryLocal(this)">
   <div class="fallback">
@@ -127,7 +127,7 @@
   var s = document.getElementById('bs-status');
   function ok(){ s.textContent = 'loaded'; s.className = 'ok'; }
   function tryLocal(img){
-    if (!img.dataset.local){ img.dataset.local = 1; img.src = '../broadside/v1/broadside.svg'; s.textContent = 'hosted copy failed, trying local'; return; }
+    if (!img.dataset.local){ img.dataset.local = 1; img.src = 'broadside.svg'; s.textContent = 'hosted copy failed, trying local'; return; }
     document.getElementById('bs').className += ' failed';
     s.textContent = 'not loaded, text fallback will print'; s.className = 'bad';
   }
