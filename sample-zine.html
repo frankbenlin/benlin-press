@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Caladea:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <style>
-  @page { size: 11in 8.5in; margin: 0; }
+  @page { size: 8.5in 11in; margin: 0; }
   * { box-sizing: border-box; }
   html, body { margin: 0; background: #e6e6e6; color: #1a1a1a;
     font-family: Caladea, Cambria, Georgia, "Times New Roman", serif; }
@@ -40,7 +40,7 @@
   .verify h1 { font-size: 15pt; margin: 0 0 0.1in; }
   .verify li { margin-bottom: 4px; }
   #bs-status.ok { color: #1d6b2b; } #bs-status.bad { color: #b00000; }
-  @media print { html, body { background: #fff; } .sheet { margin: 0; } .verify { display: none; } .panel { border-color: transparent; } }
+  @media print { html, body { background: #fff; } .sheet { margin: 0; width: 8.5in; height: 11in; } .rot { position: absolute; top: 0; left: 0; width: 11in; height: 8.5in; transform-origin: 0 0; transform: translateY(11in) rotate(-90deg); } .verify { display: none; } .panel { border-color: transparent; } }
 </style>
 </head>
 <body>
@@ -49,8 +49,8 @@
   <h1>Test checklist (doesn't print)</h1>
   <ol>
     <li>Broadside image: <strong id="bs-status">checking…</strong></li>
-    <li>Print preview shows exactly 2 pages, landscape, margins "None".</li>
-    <li>Save as PDF, then print double-sided. Try "flip on short edge" first and note which setting keeps the broadside upright.</li>
+    <li>Print preview shows exactly 2 portrait pages (content turned sideways), margins "None", scale 100%.</li>
+    <li>Save as PDF, then print double-sided. Try "flip on long edge" first and note which setting keeps the broadside upright.</li>
     <li>Fold the zine. Front cover on the outside, pages in order 1–8?</li>
     <li>Unfold. Is the broadside readable as a poster?</li>
   </ol>
@@ -58,6 +58,7 @@
 
 <!-- SIDE 1: the zine. Imposition: top row (upside down) 5 4 3 2 / bottom row 6 7 8 1 -->
 <div class="sheet">
+ <div class="rot">
   <div class="grid">
     <div class="panel flip">
       <h2>Repair &amp; reuse</h2>
@@ -100,7 +101,7 @@
     </div>
     <div class="panel back">
       <p><strong>Benlin Press</strong></p>
-      <p>frankbenlin.github.io/Benlin-press</p>
+      <p>frankbenlin.github.io/benlin-press</p>
       <p style="font-size:8pt;color:#777">Made with Franky Lite. Check every listing before you go.</p>
       <div class="pg">8</div>
     </div>
@@ -110,17 +111,20 @@
       <div class="by">Made with Franky Lite</div>
     </div>
   </div>
+ </div>
 </div>
 
 <!-- SIDE 2: the broadside, loaded from GitHub Pages -->
 <div class="sheet bs" id="bs">
-  <img src="https://frankbenlin.github.io/Benlin-press/broadside.svg"
+ <div class="rot">
+  <img src="https://frankbenlin.github.io/benlin-press/broadside.svg"
        alt="Benlin Press broadside: how to fold, what Franky does, Full Franky"
        onload="ok()" onerror="tryLocal(this)">
   <div class="fallback">
     <p><strong>Unfold me.</strong></p>
-    <p>Get Full Franky and fold guides at frankbenlin.github.io/Benlin-press</p>
+    <p>Get Full Franky and fold guides at frankbenlin.github.io/benlin-press</p>
   </div>
+ </div>
 </div>
 
 <script>
