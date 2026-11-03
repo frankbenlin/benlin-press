@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Benlin Local, sample zine (test v1)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Caladea:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  @page { size: 11in 8.5in; margin: 0; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: #e6e6e6; color: #1a1a1a;
+    font-family: Caladea, Cambria, Georgia, "Times New Roman", serif; }
+  .sheet { width: 11in; height: 8.5in; margin: 0.4in auto; background: #fff;
+    position: relative; overflow: hidden; page-break-after: always; break-after: page; }
+  .sheet:last-of-type { page-break-after: auto; break-after: auto; }
+  /* 8-panel one-sheet zine: 4 columns x 2 rows, top row upside down */
+  .grid { display: grid; grid-template-columns: repeat(4, 2.75in); grid-template-rows: repeat(2, 4.25in); }
+  .panel { padding: 0.32in 0.28in; border: 0.5pt dashed #bbb; position: relative; font-size: 9.5pt; line-height: 1.38; }
+  .top .panel, .panel.flip { transform: rotate(180deg); }
+  .panel h2 { font-size: 13pt; margin: 0 0 0.08in; line-height: 1.15; }
+  .panel p { margin: 0 0 0.08in; }
+  .panel ul { margin: 0; padding-left: 0.16in; }
+  .panel li { margin-bottom: 0.05in; }
+  .pg { position: absolute; bottom: 0.14in; left: 0; right: 0; text-align: center; font-size: 8pt; color: #777; font-style: italic; }
+  .todo { color: #b00000; font-style: italic; }
+  .cover { display: flex; flex-direction: column; justify-content: center; text-align: center; }
+  .cover .t { font-size: 28pt; font-weight: 700; line-height: 1; margin-bottom: 0.1in; }
+  .cover .s { font-style: italic; font-size: 11pt; }
+  .cover .by { margin-top: 0.4in; font-size: 9pt; }
+  .back { display: flex; flex-direction: column; justify-content: flex-end; text-align: center; }
+  .checks { list-style: none; padding: 0 !important; }
+  .checks li::before { content: attr(data-s) " "; font-weight: 700; }
+  /* broadside side */
+  .bs img { width: 11in; height: 8.5in; display: block; }
+  .bs .fallback { display: none; padding: 1in; font-size: 16pt; text-align: center; }
+  .bs.failed img { display: none; } .bs.failed .fallback { display: block; }
+  /* screen-only verification panel */
+  .verify { max-width: 11in; margin: 0.4in auto 0; padding: 0.2in 0.3in; background: #fff; border-left: 4px solid #1a1a1a; font-size: 11pt; }
+  .verify h1 { font-size: 15pt; margin: 0 0 0.1in; }
+  .verify li { margin-bottom: 4px; }
+  #bs-status.ok { color: #1d6b2b; } #bs-status.bad { color: #b00000; }
+  @media print { html, body { background: #fff; } .sheet { margin: 0; } .verify { display: none; } .panel { border-color: transparent; } }
+</style>
+</head>
+<body>
+
+<section class="verify">
+  <h1>Test checklist (doesn't print)</h1>
+  <ol>
+    <li>Broadside image: <strong id="bs-status">checking…</strong></li>
+    <li>Print preview shows exactly 2 pages, landscape, margins "None".</li>
+    <li>Save as PDF, then print double-sided. Try "flip on short edge" first and note which setting keeps the broadside upright.</li>
+    <li>Fold the zine. Front cover on the outside, pages in order 1–8?</li>
+    <li>Unfold. Is the broadside readable as a poster?</li>
+  </ol>
+</section>
+
+<!-- SIDE 1: the zine. Imposition: top row (upside down) 5 4 3 2 / bottom row 6 7 8 1 -->
+<div class="sheet">
+  <div class="grid">
+    <div class="panel flip">
+      <h2>Repair &amp; reuse</h2>
+      <p class="todo">[Franky fills in: fix-it clinics, tool libraries, bike co-ops, cobblers, salvage yards.]</p>
+      <div class="pg">5</div>
+    </div>
+    <div class="panel flip">
+      <h2>Energy</h2>
+      <p class="todo">[Franky fills in: solar installers, energy co-ops, EV dealers and chargers, weatherization help.]</p>
+      <div class="pg">4</div>
+    </div>
+    <div class="panel flip">
+      <h2>Food</h2>
+      <p class="todo">[Franky fills in: farms, farmers markets, buying clubs, food co-ops, community kitchens.]</p>
+      <div class="pg">3</div>
+    </div>
+    <div class="panel flip">
+      <h2>Your AI, honestly</h2>
+      <p>Franky checked this setup before making your zine:</p>
+      <ul class="checks">
+        <li data-s="✓">Drafting</li>
+        <li data-s="✓">Web research</li>
+        <li data-s="!">PDF: you'll save it from your browser</li>
+        <li data-s="✗">File uploads</li>
+      </ul>
+      <p class="todo">[Sample results. The real self-test writes this page.]</p>
+      <div class="pg">2</div>
+    </div>
+
+    <div class="panel">
+      <h2>Skills &amp; neighbors</h2>
+      <p class="todo">[Franky fills in: libraries, extension classes, makerspaces, swap meets, mutual aid.]</p>
+      <div class="pg">6</div>
+    </div>
+    <div class="panel">
+      <h2>Next: a TripZine</h2>
+      <p>Found a place worth a visit? Ask Franky for a TripZine: a one-sheet guide you fold and carry.</p>
+      <p>Unfold this zine to see what else Franky can do.</p>
+      <div class="pg">7</div>
+    </div>
+    <div class="panel back">
+      <p><strong>Benlin Press</strong></p>
+      <p>frankbenlin.github.io/Benlin-press</p>
+      <p style="font-size:8pt;color:#777">Made with Franky Lite. Check every listing before you go.</p>
+      <div class="pg">8</div>
+    </div>
+    <div class="panel cover">
+      <div class="t">Benlin Local</div>
+      <div class="s"><span class="todo">[Your Town]</span><br>a self-reliance zine</div>
+      <div class="by">Made with Franky Lite</div>
+    </div>
+  </div>
+</div>
+
+<!-- SIDE 2: the broadside, loaded from GitHub Pages -->
+<div class="sheet bs" id="bs">
+  <img src="https://frankbenlin.github.io/Benlin-press/broadside/v1/broadside.svg"
+       alt="Benlin Press broadside: how to fold, what Franky does, Full Franky"
+       onload="ok()" onerror="tryLocal(this)">
+  <div class="fallback">
+    <p><strong>Unfold me.</strong></p>
+    <p>Get Full Franky and fold guides at frankbenlin.github.io/Benlin-press</p>
+  </div>
+</div>
+
+<script>
+  var s = document.getElementById('bs-status');
+  function ok(){ s.textContent = 'loaded'; s.className = 'ok'; }
+  function tryLocal(img){
+    if (!img.dataset.local){ img.dataset.local = 1; img.src = '../broadside/v1/broadside.svg'; s.textContent = 'hosted copy failed, trying local'; return; }
+    document.getElementById('bs').className += ' failed';
+    s.textContent = 'not loaded, text fallback will print'; s.className = 'bad';
+  }
+</script>
+</body>
+</html>
